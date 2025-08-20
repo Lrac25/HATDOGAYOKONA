@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a6c1ee);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.container {
+  text-align: center;
+  background: rgba(255,255,255,0.8);
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
+  max-width: 800px;
+  position: relative;
+  z-index: 10;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #ff4e88;
+  text-shadow: 0 0 15px #fff, 0 0 30px #ff4e88;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.7rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.message-card {
+  background: #fff0f5;
+  border-left: 8px solid #ff4e88;
+  padding: 25px;
+  margin: 25px 0;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  color: #444;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+}
+
+.photo-section img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin: 12px;
+  border: 4px solid #fff;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.photo-section img:hover {
+  transform: scale(1.1) rotate(3deg);
+}
+
+button {
+  padding: 14px 28px;
+  background: #ff4e88;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 15px;
+  box-shadow: 0 0 15px #ff4e88;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff77a9;
+  transform: scale(1.05);
+}
+
+#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Balloon animations */
+.balloons {
+  position: absolute;
+  bottom: -150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  z-index: 1;
+}
+
+.balloon {
+  width: 80px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+  animation: float 10s infinite ease-in;
+}
+
+.balloon:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 60px;
+  background: #555;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.red {background: #ff4e50;}
+.blue {background: #4ea8ff;}
+.green {background: #4effa8;}
+.yellow {background: #ffe14e;}
+.pink {background: #ff77a9;}
+
+@keyframes float {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-400px);}
+  100% {transform: translateY(0);}
+}
+
